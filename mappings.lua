@@ -7,8 +7,10 @@ M.disabled = {
     ["<C-h"] = "",
     ["<C-j>"] = "",
     ["<C-k"] = "",
+    ["<C-i"] = "",
     ["<C-l>"] = "",
     ["<A-h>"] = "",
+    ["<A-v>"] = "",
     ["<A-j>"] = "",
     ["<A-k>"] = "",
     ["<A-l>"] = "",
@@ -65,11 +67,18 @@ M.nvterm = {
       end,
       "toggle horizontal term",
     },
+
+    ["<C-v>"] = {
+      function()
+        require("nvterm.terminal").toggle "vertical"
+      end,
+      "toggle vertical term",
+    },
   },
 
   n = {
     -- toggle in normal mode
-    ["<C-i>"] = {
+    ["<C-o>"] = {
       function()
         require("nvterm.terminal").toggle "float"
       end,
